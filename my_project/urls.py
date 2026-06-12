@@ -17,10 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from hello_world import views as index_views
-
+from about import views as about_views
+from products import views as products_all
+from contact import views as contact_all
 
 urlpatterns = [
-    path('', index_views.index, name='index'),
+    path('',index_views.index, name='home'),
+    path('hello/', index_views.index, name='index'),
+    path('about/', about_views.about_me, name='about'),
+    path('products/', products_all.products_me, name='products'),
+    path('contact/', contact_all.contact_me, name='contact'),
     path('admin/', admin.site.urls),
 ]
 
